@@ -27,7 +27,62 @@
       <option value="1">突発</option>
       <option value="2">計画</option>
     </select>
-    
   </fieldset>
+  <div id="sq">
+  <P><label for="Briefing">直後の状況</label><br>
+  <form><textarea id="Briefing" name="Briefing" cols="100" rows="10"placeholder="アクチュエーターの位置、ワークの位置、センサーの状態、コントローラーの状態等、特筆すべきもの"></textarea></p>
+  </div>
+  <div id="sq">
+  <P><label for="Briefing">不具合内容</label><br>
+  <form><textarea id="Briefing" name="Briefing" cols="100" rows="10"></textarea></p>
+  </div>
+  <div id="sq">
+  <P><label for="Briefing">不具合の原因</label><br>
+  <form><textarea id="Briefing" name="Briefing" cols="100" rows="10"placeholder="なぜその不具合が起こったと思うか、その理由"></textarea></p>
+  </div>
+  <div id="sq">
+  <P><label for="Briefing">処置</label><br>
+  <form><textarea id="Briefing" name="Briefing" cols="100" rows="10"></textarea></p>
+  </div>
+  <div id="sq">
+  <P><label for="Briefing">対策</label><br>
+  <form><textarea id="Briefing" name="Briefing" cols="100" rows="10"placeholder="今後損害を最小にするためにどういった処置が必要か"></textarea></p>
+  </div>
+  <fieldset>
+    交換部品1:
+    <input type="text"name="pert1">
+    交換部品2:
+    <input type="text"name="pert2">
+    交換部品3:
+    <input type="text"name="pert3">
+    部品納期:
+    <select id="readtime" name="readtime">
+      <option value="1">1日</option>
+      <option value="2">2日</option>
+      <option value="3">3日以上</option>
+    </select>
+    定期保全：<select id="maintenance" name="maintenance">
+      <option value="1">する</option>
+      <option value="2">しない</option>
+    </select>
+    対応後頻度（予想）:<select id="frequency" name="frequency">
+      <option value="1">起きない</option>
+      <option value="2">2日に1回程度</option>
+      <option value="3">1日に1回程度</option>
+      <option value="4">1日に数回以上</option>
+    </select>
+  </fieldset>
+<script type="text/javascript">
+function influence(a,b,c,d){
+  var riskvalu=number(a)+number(b)+number(c)+number(d)
+  if (riskvalu >= 7){document.getElementById("kekka").innerHTML = "A";}
+  if (riskvalu = 6){document.getElementById("kekka").innerHTML = "B";}
+  if (riskvalu = 5){document.getElementById("kekka").innerHTML = "C";}
+  if (riskvalu <= 4){document.getElementById("kekka").innerHTML = "D";}
+}
+  </script>
+   <input type="button" value="判断" onclick="influence(5,1,3,0)">
+   <div id="kekka">ここに結果を表示します</div>
+
 
 </body>
