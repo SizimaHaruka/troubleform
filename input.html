@@ -76,12 +76,12 @@
 function influence(a,b,c,d){
   var riskvalu=number(a)+number(b)+number(c)+number(d)
   if (riskvalu >= 7){document.getElementById("kekka").innerHTML = "A";}
-  if (riskvalu = 6){document.getElementById("kekka").innerHTML = "B";}
-  if (riskvalu = 5){document.getElementById("kekka").innerHTML = "C";}
+  if (riskvalu == 6){document.getElementById("kekka").innerHTML = "B";}
+  if (riskvalu == 5){document.getElementById("kekka").innerHTML = "C";}
   if (riskvalu <= 4){document.getElementById("kekka").innerHTML = "D";}
 }
   </script>
-   <input type="button" value="判断" onclick="influence(5,1,3,0)">
+   <input type="button" value="判断" onclick="influence(5,0,0,0)">
    <div id="kekka">ここに結果を表示します</div>
 
 
