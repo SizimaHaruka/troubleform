@@ -8,6 +8,8 @@
   <fieldset>
     管理番号:
     <input type="number"name="recodeID"min="0"max="999999999999">
+    担当者:
+    <input type="text"name="yurname">
   </fieldset>
   <fieldset>
     件名:
@@ -20,7 +22,7 @@
     <input type="text"name="LineNo">
   </fieldset>
   <fieldset>
-    人工:
+    人工(時間):
     <input type="text"name="ManHr">
     分類:
     <select id="type" name="type">
@@ -37,7 +39,7 @@
   <form><textarea id="Briefing" name="Briefing" cols="100" rows="10"></textarea></p>
   </div>
   <div id="sq">
-  <P><label for="Briefing">不具合の原因</label><br>
+  <P><label for="Briefing">不具合Sの原因</label><br>
   <form><textarea id="Briefing" name="Briefing" cols="100" rows="10"placeholder="なぜその不具合が起こったと思うか、その理由"></textarea></p>
   </div>
   <div id="sq">
@@ -54,7 +56,7 @@
     交換部品2:
     <input type="text"name="pert2">
     交換部品3:
-    <input type="text"name="pert3">
+    <input type="text"name="pert3"><br>
     部品納期:
     <select id="readtime" name="readtime">
       <option value="1">1日</option>
@@ -63,7 +65,7 @@
     </select>
     定期保全：<select id="maintenance" name="maintenance">
       <option value="1">する</option>
-      <option value="2">しない</option>
+      <option value="2">しない</option><brS>
     </select>
     対応後頻度（予想）:<select id="frequency" name="frequency">
       <option value="1">起きない</option>
@@ -74,15 +76,13 @@
   </fieldset>
 <script type="text/javascript">
 function influence(a,b,c,d){
-  var riskvalu=number(a)+number(b)+number(c)+number(d)
+  var riskvalu=Number(a)+Number(b)+Number(c)+Number(d)
   if (riskvalu >= 7){document.getElementById("kekka").innerHTML = "A";}
   if (riskvalu == 6){document.getElementById("kekka").innerHTML = "B";}
   if (riskvalu == 5){document.getElementById("kekka").innerHTML = "C";}
   if (riskvalu <= 4){document.getElementById("kekka").innerHTML = "D";}
 }
   </script>
-   <input type="button" value="判断" onclick="influence(5,0,0,0)">
+   <input type="button" value="判断" onclick="influence(readtime.value,maintenance.value,frequency.value,0)">
    <div id="kekka">ここに結果を表示します</div>
-
-
 </body>
